@@ -1,97 +1,129 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
 body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-}
-
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
-#app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+  font-family: 'Arial', sans-serif;
+  background-color: #000000;
+  color: #858585;
   text-align: center;
+  padding: 50px;
+  margin: 0;
+  box-sizing: border-box;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vanilla:hover {
-  filter: drop-shadow(0 0 2em #3178c6aa);
+/* Título */
+h1 {
+  color: #af4c59;
+  font-size: 60px;
+  margin-bottom: 20px;
 }
 
-.card {
-  padding: 2em;
+/* Contenedor del juego */
+#game-container {
+  background-color: rgb(133, 241, 105);
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  margin: 0 auto;
 }
 
-.read-the-docs {
-  color: #888;
+/* Estilo para la carta */
+img {
+  width: 225px;
+  height: 300px;
+  margin-top: 60px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
+/* Botones */
 button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
+  padding: 12px 20px;
+  font-size: 18px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
   cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin-top: 20px;
+  width: 100%;
+  max-width: 300px;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+button:hover {
+  background-color: #45a049;
+  transform: scale(1.05);
+}
+
+button:active {
+  transform: scale(1.02);
+}
+
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+  color: #000000;
+}
+
+/* Estilo de la puntuación */
+#puntuacion {
+  font-size: 24px;
+  margin-top: 20px;
+  font-weight: bold;
+  color: #ff5e00;
+}
+
+/* Mensajes de estado */
+.alerta {
+  background-color: #ffcc00;
+  padding: 10px;
+  margin-top: 20px;
+  font-size: 18px;
+  border-radius: 5px;
+  color: #d50000;
+  font-weight: bold;
+  display: inline-block;
+}
+
+.success {
+  background-color: #4caf50;
+  color: white;
+}
+
+/* Fondo del contenedor del mensaje */
+#game-over-message {
+  background-color: #f44336;
+  color: rgb(13, 105, 93);
+  padding: 15px;
+  margin-top: 20px;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(247, 8, 8, 0.356);
+}
+
+/* Estilo para nueva partida */
+#nuevaPartida {
+  background-color: #f35221;
+  margin-top: 30px;
+}
+
+#nuevaPartida:hover {
+  background-color: #da800b;
+}
+
+/* Estilo para predicción de próxima carta */
+
+#cartaSiguiente {
+  background-color:#002df5; 
+  margin-top: 30px;
+}
+
+#cartaSiguiente:hover {
+  background-color:#197dff
+}
+
+#cartaSiguiente:disabled {
+  background-color: #ccc;
+  color: #000000;
+  cursor: not-allowed;
 }
