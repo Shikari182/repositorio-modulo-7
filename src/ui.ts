@@ -94,3 +94,13 @@ export function habilitarJuego(): void {
     botonPlantarse.disabled = false;
   }
 }
+
+export const gestionarPartida = (puntuacion: number): void => {
+  if (puntuacion > 7.5) {
+    alert("Game Over! Te has pasado de 7 y medio");
+    bloquearBotones();
+  } else if (puntuacion === 7.5) {
+    alert("¡Lo has clavado! ¡Enhorabuena!");
+    bloquearBotones();
+  }
+};

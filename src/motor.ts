@@ -1,6 +1,3 @@
-
-import { bloquearBotones } from './ui';
-
 export const dameNumeroAleatorio = (): number => {
   return Math.floor(Math.random() * 10) + 1;
 };
@@ -46,12 +43,3 @@ export const obtenerMensajePlantarse = (puntos: number): string => {
   }
 };
 
-export const gestionarPartida = (puntuacion: number): void => {
-  if (puntuacion > 7.5) {
-    alert("Game Over! Te has pasado de 7 y medio");
-    bloquearBotones();
-  } else if (puntuacion === 7.5) {
-    alert("¡Lo has clavado! ¡Enhorabuena!");
-    bloquearBotones();
-  }
-};
