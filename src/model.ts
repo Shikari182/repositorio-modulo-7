@@ -1,19 +1,20 @@
 export class Partida {
-  public puntuacion: number;
+  puntuacion: number;
 
   constructor() {
     this.puntuacion = 0;
   }
 
-  actualizarPuntuacion(nuevaPuntuacion: number): void {
-    this.puntuacion = nuevaPuntuacion;
+  sumarPuntos(puntos: number): void {
+    this.puntuacion += puntos;
   }
 
-  sumarPuntos(puntos: number): number {
-    return this.puntuacion + puntos;
+  reset(): void {
+    this.puntuacion = 0;
   }
 
-  obtenerHipoteticaPuntuacion(puntosCarta: number): number {
-    return this.puntuacion + puntosCarta;
+  // Método de ayuda para crear una nueva partida
+  static crearPartida(): Partida {
+    return new Partida();
   }
 }
