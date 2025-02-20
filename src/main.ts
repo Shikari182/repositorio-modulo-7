@@ -24,7 +24,7 @@ const pedirCarta = (): void => {
   const puntosCarta = motor.obtenerPuntosCarta(carta);
   partida.sumarPuntos(puntosCarta);
   ui.muestraPuntuacion(partida.puntuacion);
-  motor.gestionarPartida(partida.puntuacion);
+  ui.gestionarPartida(partida.puntuacion);
 };
 
 // Función para "¿Cuál hubiese sido mi próxima carta?"
