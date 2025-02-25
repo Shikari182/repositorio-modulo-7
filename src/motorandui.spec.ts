@@ -15,7 +15,6 @@ describe("Pruebas de condiciones de victoria/derrota", () => {
   });
 
   afterEach(() => {
-    // Restauramos los mocks para no interferir con otros tests
     vi.restoreAllMocks();
   });
 
