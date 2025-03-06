@@ -1,3 +1,5 @@
+import { EstadoPartida, partida } from './model';
+
 export const dameNumeroAleatorio = (): number => {
   return Math.floor(Math.random() * 10) + 1;
 };
@@ -43,3 +45,22 @@ export const obtenerMensajePlantarse = (puntos: number): string => {
   }
 };
 
+
+export const gestionarEstadoPartida = (): EstadoPartida => {
+  if (partida.puntuacion === 7.5) {
+    partida.estadoPartida = 'ganar';
+  } else if (partida.puntuacion > 7.5) {
+    partida.estadoPartida = 'perder'
+  }
+
+  return partida.estadoPartida;
+}
+
+export const sumarPuntos = (puntos: number) => {
+  partida.puntuacion += puntos;
+}
+
+export const reset = () => {
+  partida.puntuacion = 0;
+  partida.estadoPartida = 'seguir_jugando';
+}

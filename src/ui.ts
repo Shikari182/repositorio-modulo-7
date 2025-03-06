@@ -1,4 +1,5 @@
 // ui.ts
+import { gestionarEstadoPartida } from './motor';
 
 export function muestraPuntuacion(puntuacion: number): void {
   const divPuntuacion = document.getElementById("puntuacion");
@@ -95,11 +96,11 @@ export function habilitarJuego(): void {
   }
 }
 
-export const gestionarPartida = (puntuacion: number): void => {
-  if (puntuacion > 7.5) {
+export const gestionarPartida = (): void => {
+  if (gestionarEstadoPartida() === 'perder') {
     alert("Game Over! Te has pasado de 7 y medio");
     bloquearBotones();
-  } else if (puntuacion === 7.5) {
+  } else if (gestionarEstadoPartida() === 'ganar') {
     alert("¡Lo has clavado! ¡Enhorabuena!");
     bloquearBotones();
   }

@@ -1,11 +1,10 @@
 // main.ts
 import "./style.css";
-import { Partida } from "./model";
+import { partida } from "./model";
 import * as motor from "./motor";
 import * as ui from "./ui";
 
 // Crear una nueva partida utilizando el objeto Partida
-let partida = Partida.crearPartida();
 
 // Inicializar la UI cuando se carga el DOM
 document.addEventListener("DOMContentLoaded", () => {
@@ -22,9 +21,9 @@ const pedirCarta = (): void => {
   ui.mostrarUrlCarta(urlCarta);
 
   const puntosCarta = motor.obtenerPuntosCarta(carta);
-  partida.sumarPuntos(puntosCarta);
+  motor.sumarPuntos(puntosCarta);
   ui.muestraPuntuacion(partida.puntuacion);
-  ui.gestionarPartida(partida.puntuacion);
+  ui.gestionarPartida();
 };
 
 // Función para "¿Cuál hubiese sido mi próxima carta?"
@@ -64,7 +63,8 @@ const plantarse = (): void => {
 
 // Función para "Nueva Partida"
 const nuevaPartida = (): void => {
-  partida.reset();
+  motor.reset();
+  console.log(partida)
   ui.muestraPuntuacion(partida.puntuacion);
   // Se reestablece la carta por defecto (boca abajo).
   ui.mostrarUrlCarta(
